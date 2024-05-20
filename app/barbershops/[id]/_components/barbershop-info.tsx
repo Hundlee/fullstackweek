@@ -77,8 +77,8 @@ const BarbershopInfo = ({ barbershop }: BarbershopInfoProps) => {
                     </div>
                 </div>
 
-                <div className="px-5 md:px-10 pt-3 pb-6 border-b border-solid border-secondary lg:px-0 lg:flex lg:justify-between">
-                    <div>
+                <div className="hidden px-5 md:px-10 pt-3 pb-6 border-b border-solid border-secondary lg:px-0 lg:flex lg:justify-between">
+                    <div className=" pt-6">
                         <h1 className="text-2xl font-bold">
                             {barbershop.name}
                         </h1>
@@ -87,7 +87,7 @@ const BarbershopInfo = ({ barbershop }: BarbershopInfoProps) => {
                             <p className="text-sm">{barbershop.address}</p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center gap-1 mt-2 bg-secondary rounded-lg p-5">
+                    <div className="flex flex-col items-center gap-1 bg-secondary rounded-lg p-5 mt-6">
                         <div className="text-xl flex items-center gap-1">
                             <StarIcon
                                 className="text-primary fill-primary"
