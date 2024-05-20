@@ -144,7 +144,7 @@ const ServiceItem = ({
     }, [date, dayBookings]);
 
     return (
-        <Card>
+        <Card className="rounded-lg">
             <CardContent className="p-3">
                 <div className="flex gap-4 items-center">
                     <div className="relative min-h-[110px] min-w-[110px] max-h-[110px] max-w-[110px]">
@@ -188,7 +188,7 @@ const ServiceItem = ({
                                         <SheetTitle>Fazer Reserva</SheetTitle>
                                     </SheetHeader>
 
-                                    <div className="py-6 ">
+                                    <div className="py-6 w-full">
                                         <Calendar
                                             mode="single"
                                             selected={date}
