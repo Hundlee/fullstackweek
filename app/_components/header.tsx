@@ -39,7 +39,7 @@ const Header = async () => {
                     </div>
                     <div className="hidden md:flex md:gap-2">
                         <Button
-                            className="gap-2 text-white xl:text-lg font-normal hover:bg-transparent"
+                            className="gap-2 text-white xl:text-sm font-normal hover:bg-transparent"
                             variant="ghost"
                             asChild
                         >
@@ -56,7 +56,7 @@ const Header = async () => {
                                     alt={session?.user?.name as string}
                                 />
                             </Avatar>
-                            <h2 className="xl:text-lg">
+                            <h2 className="xl:text-sm">
                                 {session?.user?.name}
                             </h2>
                         </div>
