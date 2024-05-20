@@ -62,7 +62,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
     return (
         <Sheet open={sheetIsOpen} onOpenChange={setSheetIsOpen}>
             <SheetTrigger asChild>
-                <Card className="min-w-full rounded-lg cursor-pointer">
+                <Card className="min-w-full max-w-full rounded-lg cursor-pointer">
                     <CardContent className="py-0 flex px-0">
                         <div className="flex flex-col gap-2 py-5 flex-[3] pl-5">
                             <Badge
