@@ -43,7 +43,7 @@ const BookingsPage = async () => {
         <>
             <Header />
 
-            <div className="px-5 py-6">
+            <div className="px-5 py-6 md:px-10 xl:px-32">
                 <h1 className="text-xl font-bold mb-6">Agendamentos</h1>
 
                 {confirmedBookings.length > 0 && (
@@ -51,7 +51,15 @@ const BookingsPage = async () => {
                         <h2 className="text-sm text-gray-400 font-bold uppercase mb-3">
                             Confirmados
                         </h2>
-                        <div className="flex flex-col gap-3">
+                        <div className="md:hidden flex flex-col gap-3">
+                            {confirmedBookings.map((booking: any) => (
+                                <BookingItem
+                                    key={booking.id}
+                                    booking={booking}
+                                />
+                            ))}
+                        </div>
+                        <div className="hidden md:grid md:grid-cols-2 gap-3 ">
                             {confirmedBookings.map((booking: any) => (
                                 <BookingItem
                                     key={booking.id}
@@ -67,8 +75,15 @@ const BookingsPage = async () => {
                         <h2 className="text-sm text-gray-400 font-bold uppercase mt-6 mb-3">
                             Finalizados
                         </h2>
-
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-3 md:hidden">
+                            {finishedBookings.map((booking: any) => (
+                                <BookingItem
+                                    key={booking.id}
+                                    booking={booking}
+                                />
+                            ))}
+                        </div>
+                        <div className="hidden md:grid md:grid-cols-2 gap-3">
                             {finishedBookings.map((booking: any) => (
                                 <BookingItem
                                     key={booking.id}
