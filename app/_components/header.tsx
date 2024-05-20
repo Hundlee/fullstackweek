@@ -7,7 +7,8 @@ import SideMenu from "./side-menu";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../_lib/auth";
-import { Avatar, AvatarImage } from "./ui/avatar";
+import { LoginButton, UserPerfil } from "./header-perfil";
+import { User } from "@prisma/client";
 
 const Header = async () => {
     const session = await getServerSession(authOptions);
@@ -50,15 +51,11 @@ const Header = async () => {
                         </Button>
 
                         <div className="flex items-center gap-2">
-                            <Avatar className="h-7 w-7 xl:h-9 xl:w-9">
-                                <AvatarImage
-                                    src={session?.user?.image as string}
-                                    alt={session?.user?.name as string}
-                                />
-                            </Avatar>
-                            <h2 className="xl:text-sm">
-                                {session?.user?.name}
-                            </h2>
+                            {session?.user ? (
+                                <UserPerfil user={session.user as User} />
+                            ) : (
+                                <LoginButton />
+                            )}
                         </div>
                     </div>
                 </CardContent>
