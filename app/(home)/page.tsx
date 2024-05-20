@@ -105,7 +105,7 @@ export default async function Home() {
                         Mais visitadas
                     </h2>
 
-                    <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-4 overflow-x-auto md:scrollbar-thin md:scrollbar-thumb-primary md:scrollbar-track-transparent md:[&::-webkit-scrollbar]:mt-10">
                         {popularBarbershops.map((barbershop: any) => (
                             <div key={barbershop.id}>
                                 <BarbershopItem barbershop={barbershop} />
