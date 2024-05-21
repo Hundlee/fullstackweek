@@ -6,6 +6,7 @@ import BarbershopItem from "./_components/barbershop-item";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../_lib/auth";
 import Greeting from "./_components/greeting";
+import Image from "next/image";
 
 export default async function Home() {
     const session = await getServerSession(authOptions);
@@ -74,14 +75,20 @@ export default async function Home() {
                 </div>
             </div>
 
-            <div className="hidden md:gap-6 md:flex md:justify-between py-10 px-10 xl:px-32">
-                <div className="flex flex-col justify-between">
+            <div className="hidden md:gap-6 md:flex md:justify-between py-20 px-10 xl:px-32 relative w-full h-full">
+                <Image
+                    src="/background-home-page.jpg"
+                    alt="background"
+                    fill
+                    className="absolute object-cover object-top z-0 grayscale "
+                />
+                <div className="flex flex-col justify-between z-50">
                     <Greeting />
                     <div className=" w-[40vw]">
                         <Search />
                     </div>
 
-                    <div className=" w-[40vw]">
+                    <div className=" w-[40vw] z-50">
                         {confirmedBookings.length > 0 && (
                             <>
                                 <h2 className=" text-xs mb-3 uppercase text-gray-400 font-bold">
@@ -100,7 +107,7 @@ export default async function Home() {
                     </div>
                 </div>
 
-                <div className="max-w-[40vw]">
+                <div className="max-w-[40vw] z-50">
                     <h2 className="text-md mb-3 uppercase text-gray-400 font-bold ">
                         Mais visitadas
                     </h2>
